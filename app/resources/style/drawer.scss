@@ -26,7 +26,6 @@
   width: $drawer-width;
   background: white;
   overflow-x: hidden;
-  overflow-y: scroll;
   padding: $drawer-padding;
   z-index: $z-drawer;
   -webkit-overflow-scrolling: touch;
@@ -34,6 +33,7 @@
 
 #drawer-menu {
   list-style-type: none;
+  -webkit-padding-start: 10px;
 }
 
 #drawer-menu li {
