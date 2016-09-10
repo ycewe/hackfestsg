@@ -21,6 +21,13 @@ var PageBody = React.createClass( {
 
 	render() {
 		return (
+			<div>
+	 			<div id = "search">
+
+                 <Search onSearch={this.searchForItem} />
+
+             </div>
+
 			<div id = "images">
 
 
@@ -48,9 +55,9 @@ var PageBody = React.createClass( {
 				<img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
 
 
-			</div>	
+			</div>
 
-			
+			</div>
 		);
 	}
 });
