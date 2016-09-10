@@ -47,7 +47,7 @@ router.put('/api/:id', function *(req, res, next) {
     });
 });
 
-// DELETE /todos/:id
+// DELETE a particular id 
 router.delete('/api/:id', function *(req, res, next) {
 
     res = yield entry.findByIdAndRemove(this.params.id, function (err, post) {

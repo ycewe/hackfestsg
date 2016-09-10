@@ -20,13 +20,7 @@ var dbConnection = mongoose.connect('mongodb://hackfestarun:hackfestarun@ds02101
 
 var app = Koa();
 
-/**
- * Body Parser to parse the json object
-*/
-
-
 app.use(serve(__dirname + '/public'));
-
 
 /**
  * Routings
