@@ -1,0 +1,44 @@
+.entry-rating {
+  position: absolute;
+  right: 1rem;
+}
+
+.entry-tags {
+  position: absolute;
+  right: 1rem;
+}
+
+.tags {
+  background-color: orange;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.entry-details hr {
+  margin: 15px 0;
+}
+
+.entry-recraft {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.recraft-button {
+  position: relative;
+  top: 4rem;
+  width: 90%;
+  margin: 20px;
+  background: white;
+  border: 2px black solid;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 20px;
+  -webkit-transition: all .5s; /* Safari */
+  transition: all .5s;
+}
+
+.recraft-button:hover {
+  background: black;
+  color: white;
+}
