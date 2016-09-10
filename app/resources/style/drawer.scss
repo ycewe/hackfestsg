@@ -26,10 +26,24 @@
   width: $drawer-width;
   background: white;
   overflow-x: hidden;
-  overflow-y: scroll;
   padding: $drawer-padding;
   z-index: $z-drawer;
   -webkit-overflow-scrolling: touch;
+}
+
+#drawer-menu {
+  list-style-type: none;
+  -webkit-padding-start: 10px;
+}
+
+#drawer-menu li {
+  margin-bottom: 2rem;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 #drawer-toggle:checked ~ #drawer-toggle-label {
@@ -44,21 +58,20 @@
   left: $zero;
 }
 
-@media all and (max-width:350px) { 
+@media all and (max-width:350px) {
 
-  #drawer-toggle:checked ~ #drawer-toggle-label { 
-    height: 100%; 
-    width: $mobile-hamburger-icon-width; 
-  } 
+  #drawer-toggle:checked ~ #drawer-toggle-label {
+    height: 100%;
+    width: $mobile-hamburger-icon-width;
+  }
 
-  #drawer-toggle:checked ~ #drawer-toggle-label, 
-  #drawer-toggle:checked ~ header { 
-    left: calc(100% - #{$mobile-hamburger-icon-width}); 
-  } 
+  #drawer-toggle:checked ~ #drawer-toggle-label,
+  #drawer-toggle:checked ~ header {
+    left: calc(100% - #{$mobile-hamburger-icon-width});
+  }
 
-  #drawer-toggle:checked ~ #drawer { 
-    width: calc(100% - #{$mobile-hamburger-icon-width}); 
-    padding: $drawer-padding; 
-  } 
+  #drawer-toggle:checked ~ #drawer {
+    width: calc(100% - #{$mobile-hamburger-icon-width});
+    padding: $drawer-padding;
+  }
 }
-

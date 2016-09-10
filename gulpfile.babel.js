@@ -38,6 +38,11 @@ function writeServiceWorker(dir, handleFetch, cb) {
   swPrecache.write(path.join(dir, 'service-worker.js'), config, cb);
 }
 
+gulp.task('fonts', () =>
+  gulp.src('./app/resources/Fonts/**/*.+(otf|ttf|eof|ttc|woff)')
+    .pipe(gulp.dest(`${rootDir}/resources/Fonts/`))
+);
+
 gulp.task('css', () =>
   gulp.src('./app/resources/style/**/*.scss')
     .pipe(
@@ -55,7 +60,7 @@ gulp.task('html', () =>
 );
 
 gulp.task('image', () =>
-  gulp.src('./app/resources/images/*.+(png|jpg|svg)')
+  gulp.src('./app/resources/images/**/*.+(png|jpg|svg)')
     .pipe(imagemin())
     .pipe(gulp.dest(`${rootDir}/resources/images/`))
 );
@@ -90,7 +95,7 @@ gulp.task('lint', () =>
     .pipe(eslint.failAfterError())
 );
 
-gulp.task('generate-service-worker', ['bundle', 'css', 'html', 'image'], (cb) => {
+gulp.task('generate-service-worker', ['bundle', 'css', 'html', 'image', 'fonts'], (cb) => {
   writeServiceWorker(rootDir, (env === 'production'), cb);
 });
 

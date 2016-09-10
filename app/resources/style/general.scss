@@ -1,10 +1,15 @@
+$font-family: Apercu Regular;
+$font-file: '../Fonts/OpenSans/OpenSans-Regular';
+
 @import 'constants';
+@include font-face($font-family, $font-file, normal, normal);
 
 html {
   overflow: hidden;
 }
 
 body {
+  font-family: $font-family;
   -webkit-text-size-adjust: none;
   left: $zero;
   padding: $zero;

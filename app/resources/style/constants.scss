@@ -1,19 +1,19 @@
 $zero: 0;
 $root-height: 100vh;
 
-$header-height: 6rem;
+$header-height: 3rem;
 $z-header: 1000;
 
 $mobile-hamburger-icon-width: 3rem;
-$drawer-padding: 1rem;
+$drawer-padding: 0.5rem;
 $drawer-displacement: -21rem;
-$drawer-width: 16rem;
+$drawer-width: 10rem;
 $z-drawer: 2000;
 
 @mixin font-face($font-family, $filepath, $font-weight, $font-style) {
   @font-face {
       font-family: $font-family;
-      src: url('#{$filepath}.otf') format('opentype');
+      src: url('#{$filepath}.ttf') format('opentype');
       font-weight: $font-weight;
       font-style: $font-style;
   }
@@ -49,4 +49,3 @@ $z-drawer: 2000;
       -ms-transition: $transitions;
           transition: $transitions;
 }
-
