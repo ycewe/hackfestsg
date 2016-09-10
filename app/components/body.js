@@ -42,6 +42,9 @@ class PageBody extends React.Component {
 			{
 				(this.state.user) ?
 					<div>
+					<div id ="pagetitle">
+	          <li>Home</li>
+	        </div>
 		 			<div id = "search">
 	          <Search onSearch={this.searchForItem} />
 					</div>

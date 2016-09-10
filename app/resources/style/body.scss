@@ -1,5 +1,14 @@
 @import 'constants';
 
+#pagetitle {
+  font-size: 1.1rem;
+  position:fixed;
+  margin-top:-81px;
+  margin-left:55px;
+  z-index:3;
+  list-style-type: none;
+}
+
 #images {
   top: 8.5rem;
   position: relative;
