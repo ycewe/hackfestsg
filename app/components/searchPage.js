@@ -28,6 +28,16 @@ class SearchPage extends React.Component {
     });
   }
 
+  /*createItems(items) {
+    var output = [];
+
+    items.map(function(item){
+         output.push(<li>{item._id}</li>);
+
+    })
+    return output;
+    
+  }*/
 
   render() {
     const style = {
@@ -43,12 +53,50 @@ class SearchPage extends React.Component {
 
 
     return(
-      <div id="search-page-content" style={style}>
-        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
-        <Dropdown options={options} placeholder="Sort by" />
-        {JSON.stringify(this.state.test)}
-      </div>
 
+      <div>
+      {
+        <div>
+        <div id="search-page-content" style={style}>
+        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
+
+        <Dropdown options={options} placeholder="Sort by" />
+        </div>
+        
+        <div id = "images">
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/1.jpg" className = "topImage"/></a></p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></a> </p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></a></p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></a></p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/8.jpg" className = "botImage"/></a> </p>
+
+
+        </div></div>
+
+      }
+      </div>
     );
   }
 }
