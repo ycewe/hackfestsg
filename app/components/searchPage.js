@@ -24,12 +24,12 @@ class SearchPage extends React.Component {
     }
 
     const options = [
-      'rating', 'views', 'most recent',
+      'Highest ratings', 'Most views', 'Most collected', 'Most recent',
     ];
 
     return(
       <div id="search-page-content" style={style}>
-        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Search..." />
+        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
         <Dropdown options={options} placeholder="Sort by" />
       </div>
     );
