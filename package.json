@@ -17,12 +17,6 @@
     "url": "https://github.com/ycewe/node-react-boilerplate/issues"
   },
 
-  "dependencies": { 
-    "firebase": "^3.3.2",
-
-    "body-parser": "^1.15.2",
-
-
   "dependencies": {
     "axios": "^0.14.0",
     "body-parser": "^1.15.2",

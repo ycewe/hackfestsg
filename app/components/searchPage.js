@@ -54,14 +54,11 @@ class SearchPage extends React.Component {
 
     return(
 
-      <div id="search-page-content" style={style}>
-        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
-
       <div>
       {
         <div>
         <div id="search-page-content" style={style}>
-        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Search..." />
+        <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
 
         <Dropdown options={options} placeholder="Sort by" />
         </div>
@@ -85,6 +82,16 @@ class SearchPage extends React.Component {
 
             <p className = "content"> <a href="https://www.google.com.sg/">
             <img src="./resources/images/Entries/5.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></a> </p>
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Entries/8.jpg" className = "botImage"/></a> </p>
+
 
         </div></div>
 
