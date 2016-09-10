@@ -1,14 +1,40 @@
 @import 'constants';
 
-/*#app-body {
-  top: $header-height;
+#images {
+  top: 100px;
   position: relative;
   z-index: -1;
-  width: 100%;
-  margin: 0;
   padding: 0;
-}*/
+  
+}
 
+.topImage
+{
+display: inline;
+padding: 0px;
+}
+
+.botImage
+{
+display: inline;
+padding: 0px;
+}
+
+.content
+{
+display: inline;
+vertical-align: middle;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  display: flex;
+  margin: 0.5%;
+}
 #search {
   top: $header-height;
   position: relative;
