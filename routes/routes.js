@@ -24,7 +24,7 @@ router.get('/api', function *(req, res, next){
  */
 router.post('/api', bodyParser, function *(next){
     entry.create(this.request.body, function(err){
-    if (err) return next(err);
+    if (err) console.log(err);
    })
 });
 
@@ -45,6 +45,12 @@ router.put('/api/:id', bodyParser, function *(req, res, next) {
 
     yield entry.findByIdAndUpdate(this.params.id, this.request.body)
 
+});
+
+// GET array of top 5 trending
+router.get('/trending', function *(req, res, next){
+   res = yield entry.find().sort({trendingScore: -1}).limit(5).exec();
+    this.body = res;
 });
 
 // DELETE a particular id
