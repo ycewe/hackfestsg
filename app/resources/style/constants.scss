@@ -1,13 +1,13 @@
 $zero: 0;
 $root-height: 100vh;
 
-$header-height: 6rem;
+$header-height: 3rem;
 $z-header: 1000;
 
 $mobile-hamburger-icon-width: 3rem;
-$drawer-padding: 1rem;
+$drawer-padding: 0.5rem;
 $drawer-displacement: -21rem;
-$drawer-width: 10rem;
+$drawer-width: 6rem;
 $z-drawer: 2000;
 
 @mixin font-face($font-family, $filepath, $font-weight, $font-style) {
