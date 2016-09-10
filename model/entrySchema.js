@@ -4,16 +4,16 @@ var router = require('koa-router')();
 
 var entrySchema = new mongoose.Schema({
     image: String,
-    entryName : String,
-    userName : String,
-    dateOfPost : String,
-    rating : Number,
-    numViews : Number,
-    numDownloads : Number,
-    materials : [String],
-    steps : [{stepImage : String, stepText : String}],
-    hashTag : [String],
-    trendingScore : Number
+    entryName: String,
+    userName: String,
+    dateOfPost: String,
+    rating: Number,
+    numViews: Number,
+    usersDownloaded: [String],
+    materials: [String],
+    steps: [{stepImage: String, stepText: String}],
+    hashTag: [String],
+    trendingScore: Number
 
 });
 

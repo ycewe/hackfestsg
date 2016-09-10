@@ -11,6 +11,7 @@ app.use(bodyParser);
  * GET. Returns the whole database
  */
 router.get('/api', function *(req, res, next){
+
     res = yield entry.find(req.query, function(err,api){
     }).exec();
     this.body = res;
@@ -21,8 +22,8 @@ router.get('/api', function *(req, res, next){
 /**
  * POST. Creates an entry.
  */
-router.post('/api', function *(req, res, next){
-    entry.create(req.body, function(err){
+router.post('/api', bodyParser, function *(next){
+    entry.create(this.request.body, function(err){
     if (err) return next(err);
    })
 });
@@ -40,14 +41,13 @@ router.get('/api/:id', function *(req, res, next){
 });
 
 // PUT. Update.
-router.put('/api/:id', function *(req, res, next) {
+router.put('/api/:id', bodyParser, function *(req, res, next) {
 
-    res = yield entry.findByIdAndUpdate(this.params.id, function (err, post) {
-        if (err) return next(err);
-    });
+    yield entry.findByIdAndUpdate(this.params.id, this.request.body)
+
 });
 
-// DELETE a particular id 
+// DELETE a particular id
 router.delete('/api/:id', function *(req, res, next) {
 
     res = yield entry.findByIdAndRemove(this.params.id, function (err, post) {
