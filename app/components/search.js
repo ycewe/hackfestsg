@@ -25,7 +25,6 @@ class SearchBar extends React.Component {
 	render() {
 		return (
 			<Search placeholder='What are you looking for?' />
-
 		);
 	}
 };

@@ -23,7 +23,7 @@ class Menu extends React.Component {
     return (
       <nav id="drawer">
           <ul id="drawer-menu">
-            <Link to='home' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
+            <Link to='/' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
               <li><img src="./resources/images/Icons/home.png" alt="home" className="menu-icon"/>Home</li>
             </Link>
             <Link to='search' style={style} activeStyle={activeStyle} activeClassName='activeLink'>

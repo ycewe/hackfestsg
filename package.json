@@ -25,6 +25,7 @@
     "memcached": "^2.2.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-dropdown": "^1.1.0",
     "react-router": "^2.8.0",
     "react-search": "^1.0.10",
     "redis": "^2.6.0-2",
