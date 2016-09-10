@@ -28,6 +28,16 @@ class SearchPage extends React.Component {
     });
   }
 
+  /*createItems(items) {
+    var output = [];
+
+    items.map(function(item){
+         output.push(<li>{item._id}</li>);
+
+    })
+    return output;
+    
+  }*/
 
   render() {
     const style = {
@@ -43,12 +53,41 @@ class SearchPage extends React.Component {
 
 
     return(
-      <div id="search-page-content" style={style}>
+      <div>
+      {
+        <div>
+        <div id="search-page-content" style={style}>
         <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Search..." />
         <Dropdown options={options} placeholder="Sort by" />
-        {JSON.stringify(this.state.test)}
-      </div>
+        </div>
+        
+        <div id = "images">
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></a></p>
 
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/></a> </p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></a></p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></a></p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/></a> </p>
+
+
+            <p className = "content"> <a href="https://www.google.com.sg/">
+            <img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
+        </div></div>
+
+      }
+      </div>
     );
   }
 }
