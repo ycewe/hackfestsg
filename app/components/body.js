@@ -21,9 +21,41 @@ var PageBody = React.createClass( {
 
 	render() {
 		return (
-			<div id = "search">
+			<div>
+	 			<div id = "search">
 
-				<Search onSearch={this.searchForItem} />
+                 <Search onSearch={this.searchForItem} />
+
+             </div>
+
+			<div id = "images">
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/cardboard.png" className = "topImage"/></a></p>
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/cosmetic.png" className = "topImage"/></a> </p>
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></a></p>
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/laundry.png" className = "botImage"/></a></p>
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/shampoo.png" className = "botImage"/></a> </p>
+
+
+				<p className = "content"> <a href="https://www.google.com.sg/">
+				<img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
+
+
+			</div>
 
 			</div>
 		);
