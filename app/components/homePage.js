@@ -44,7 +44,7 @@ class HomePage extends React.Component {
             <Search onSearch={this.searchForItem} />
           </div>
 
-          <div id = "images">
+          <div id = "home-images">
             <p className = "content"> <a href="https://www.google.com.sg/">
             <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></a></p>
 
