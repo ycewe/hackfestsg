@@ -4,6 +4,7 @@ import Dropdown from 'react-dropdown';
 import axios from 'axios';
 import Connection from './connection';
 const API_URL = 'http://localhost:8000/api';
+import { Link } from 'react-router';
 
 
 
@@ -36,7 +37,7 @@ class SearchPage extends React.Component {
 
     })
     return output;
-    
+
   }*/
 
   render() {
@@ -51,7 +52,6 @@ class SearchPage extends React.Component {
       'Highest ratings', 'Most views', 'Most collected', 'Most recent',
     ];
 
-
     return(
 
       <div>
@@ -62,35 +62,38 @@ class SearchPage extends React.Component {
 
         <Dropdown options={options} placeholder="Sort by" />
         </div>
-        
+
         <div id = "images">
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/1.jpg" className = "topImage"/></a></p>
+            <p className = "content">
+            <Link to="/entry/1">
+            <img src="./resources/images/Entries/1.jpg" className = "topImage"/>
+            </Link>
+            </p>
 
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></a> </p>
+            <p className = "content"> <Link to="/entry/2">
+            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link> </p>
 
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></a></p>
+            <p className = "content"> <Link to="/entry/3">
+            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link></p>
 
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></a></p>
+            <p className = "content"> <Link to="/entry/4">
+            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></Link></p>
 
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></a> </p>
+            <p className = "content"> <Link to="/entry/5">
+            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></Link> </p>
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></a> </p>
+            <p className = "content"> <Link to="/entry/6">
+            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></Link> </p>
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></a> </p>
+            <p className = "content"> <Link to="/entry/7">
+            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Entries/8.jpg" className = "botImage"/></a> </p>
+            <p className = "content"> <Link to="/entry/8">
+            <img src="./resources/images/Entries/8.jpg" className = "botImage"/></Link> </p>
 
 
         </div></div>

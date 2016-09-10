@@ -64,9 +64,37 @@ class EntryPage extends React.Component {
         tags.push(<span className="tags">#stopthepretence</span>);
     }
 
+    let imgUrl = './resources/images/app_homepage2.jpg';
+    switch(this.props.location.pathname) {
+        case '/entry/1':
+          imgUrl = './resources/images/Entries/1.jpg';
+          break;
+        case '/entry/2':
+          imgUrl = './resources/images/Entries/2.jpg';
+            break;
+        case '/entry/3':
+          imgUrl = './resources/images/Entries/3.jpg';
+            break;
+        case '/entry/4':
+          imgUrl = './resources/images/Entries/4.jpg';
+            break;
+        case '/entry/5':
+          imgUrl = './resources/images/Entries/5.jpg';
+            break;
+        case '/entry/6':
+          imgUrl = './resources/images/Entries/6.jpg';
+            break;
+        case '/entry/7':
+          imgUrl = './resources/images/Entries/7.jpg';
+            break;
+        case '/entry/8':
+          imgUrl = './resources/images/Entries/8.jpg';
+            break;
+    }
+
     return (
       <div id="entry-page">
-        <img style={imageStyle} src='./resources/images/app_homepage2.jpg' />
+        <img style={imageStyle} src={imgUrl} />
         <div className="entry-details" style={style}>
           <div>
             <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{this.props.name}</span>

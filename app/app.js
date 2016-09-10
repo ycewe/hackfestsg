@@ -15,7 +15,7 @@ ReactDOM.render(
       <Route path="saved" component={SavedPage} />
       <Route path="upload" component={UploadPage} />
       <Route path="search" component={SearchPage} />
-      <Route path="entry/:entryid" component={EntryPage} />
+      <Route path="entry(/:entryId)" component={EntryPage} />
     </Route>
   </Router>,
   document.getElementById('root')
