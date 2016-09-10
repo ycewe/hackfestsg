@@ -69,7 +69,7 @@ class UploadPage extends React.Component {
         <img style={imageStyle} src='./resources/images/app_homepage2.jpg' />
         <div className="entry-details" style={style}>
           <div>
-            <span className="entry-name">{this.props.name}</span>
+            <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{this.props.name}</span>
             <span className="entry-rating">
               {stars}
             </span>
@@ -81,12 +81,14 @@ class UploadPage extends React.Component {
           </div>
         </div>
         <div className="entry-instructions" style={style}>
-          <div className="instruct-title">What do I need?</div>
-          <hr />
+          <span className="instruct-title">What do I need?</span>
+          <input type="checkbox" id="instruct-toggle" /><label htmlFor="instruct-toggle" id="instruct-toggle-label"></label>
           <div className="instruct-content"></div>
         </div>
-        <div className="entry-recraft">
-          <button className="recraft-button">How do I recraft it?</button>
+        <div className="entry-recraft" style={style}>
+          <span className="recraft-title">How do I Re-Craft?</span>
+          <input type="checkbox" id="recraft-toggle" /><label htmlFor="recraft-toggle" id="recraft-toggle-label"></label>
+          <div className="recraft-content"></div>
         </div>
       </div>
     );

@@ -1,3 +1,42 @@
+@import 'constants';
+
+.entry-name {
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+#instruct-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rems;
+}
+
+.instruct-content {
+  height: 100px;
+  margin-top: 10px;
+  display: none;
+}
+
+#recraft-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rems;
+}
+
+.recraft-content {
+  height: 100px;
+  margin-top: 10px;
+  display: none;
+}
+
+#instruct-toggle:checked ~ .instruct-content {
+  display: block;
+}
+
+#recraft-toggle:checked ~ .recraft-content {
+  display: block;
+}
+
 .entry-rating {
   position: absolute;
   right: 1rem;
@@ -16,29 +55,4 @@
 
 .entry-details hr {
   margin: 15px 0;
-}
-
-.entry-recraft {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.recraft-button {
-  position: relative;
-  top: 4rem;
-  width: 90%;
-  margin: 20px;
-  background: white;
-  border: 2px black solid;
-  border-radius: 10px;
-  height: 50px;
-  font-size: 20px;
-  -webkit-transition: all .5s; /* Safari */
-  transition: all .5s;
-}
-
-.recraft-button:hover {
-  background: black;
-  color: white;
 }
