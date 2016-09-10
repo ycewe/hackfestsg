@@ -43,10 +43,6 @@ class Header extends React.Component {
           <div></div>
           <img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
         </div>
-        <div id="jumbotron">
-            <img src="./resources/images/app_logo_homepage.png" id="header-title"/>
-            <img src="./resources/images/app_homepage1.jpg" id="header-background"/>
-        </div>
       </div>
     );
   }
