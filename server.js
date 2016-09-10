@@ -1,16 +1,14 @@
 var Koa = require('koa');
 var serve = require('koa-static');
 var connections = require('./config/connections');
-// var bodyParser = require('body-parser');
 
-var app = Koa();
 var url = connections.hostname + ':' + connections.port;
 
 /**
  * Connection to database
  */
 var mongoose = require('mongoose');
-var dbConnection = mongoose.connect('mongodb://localhost/hackFest',
+var dbConnection = mongoose.connect('mongodb://hackfestarun:hackfestarun@ds021016.mlab.com:21016/hackfestarun',
     function (err) {
         if (err) {
             console.log('Connection Error,err');
@@ -20,27 +18,30 @@ var dbConnection = mongoose.connect('mongodb://localhost/hackFest',
         }
     });
 
+var app = Koa();
 
 /**
  * Body Parser to parse the json object
-
-app.use(bodyParser.urlencoded({ extended:true}));
-app.use(bodyParser.json());
 */
+
+
+app.use(serve(__dirname + '/public'));
 
 
 /**
  * Routings
  */
-var routing = require('./routes/routes');
+ var routing = require('./routes/routes');
 app.use(routing.routes());
 app.use(routing.allowedMethods());
+
+var entry = require('./model/entrySchema');
 
 /**
  * Starts the server and push users to the public page.
  */
-app.use(serve(__dirname + '/public'));
 app.listen(connections.port);
 
 console.log('Serving on ' + url + ' in ' + connections.env);
 
+module.exports = app;

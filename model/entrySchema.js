@@ -1,5 +1,6 @@
 // Dependencies
 var mongoose = require('mongoose');
+var router = require('koa-router')();
 
 var entrySchema = new mongoose.Schema({
     image: String,
@@ -11,7 +12,7 @@ var entrySchema = new mongoose.Schema({
     numDownloads : Number,
     materials : [String],
     steps : [{stepImage : String, stepText : String}],
-    hashTag : String,
+    hashTag : [String],
     trendingScore : Number
 
 });
@@ -33,5 +34,6 @@ test.save(function(err){
 });
 */
 
+
 // Return Model
-module.export = entryModel;
+module.exports = entryModel;
