@@ -15,8 +15,7 @@
   margin: 0 auto;
   background: #419be0;
   color: #333;
-  position: fixed;
-  top: 3rem;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -29,7 +28,7 @@
   height: 3rem;
   color: #000;
   background: #FFF;
-  position: fixed;
+  position: relative;
   font-size: 1rem;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 2px 9px 1px rgba(0, 0, 0, 0.12),
