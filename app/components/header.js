@@ -18,9 +18,12 @@ class Header extends React.Component {
   }
 
   render() {
-    const photoUrl = './resources/images/Icons/user_default.png';
+    let photoUrl = './resources/images/Icons/user_default.png';
+
     if(this.state.user) {
-      const photoUrl = (this.state.user.photoUrl) ? this.state.user.photoUrl : './resources/images/Icons/user_default.png';
+      photoUrl = (this.state.user.photoUrl) ? this.state.user.photoUrl : './resources/images/Icons/user_default.png';
+    } else {
+      photoUrl = '';
     }
 
     const style = {
@@ -30,11 +33,15 @@ class Header extends React.Component {
       height: '50px',
     }
 
+    const inactiveStyle = {
+      opacity: 0,
+    }
+
     return(
       <div>
         <div className="app-header">
           <div></div>
-          <img src={photoUrl} style={style}/>
+          <img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
         </div>
         <div id="jumbotron">
             <img src="./resources/images/app_logo_homepage.png" id="header-title"/>
