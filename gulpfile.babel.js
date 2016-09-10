@@ -55,7 +55,7 @@ gulp.task('html', () =>
 );
 
 gulp.task('image', () =>
-  gulp.src('./app/resources/images/*.+(png|jpg|svg)')
+  gulp.src('./app/resources/images/**/*.+(png|jpg|svg)')
     .pipe(imagemin())
     .pipe(gulp.dest(`${rootDir}/resources/images/`))
 );
