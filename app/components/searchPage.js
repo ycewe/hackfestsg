@@ -63,27 +63,24 @@ class SearchPage extends React.Component {
         
         <div id = "images">
             <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></a></p>
+            <img src="./resources/images/Entries/1.jpg" className = "topImage"/></a></p>
 
 
             <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/></a> </p>
+            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></a> </p>
 
 
             <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></a></p>
+            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></a></p>
 
 
             <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></a></p>
+            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></a></p>
 
 
             <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/></a> </p>
+            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></a> </p>
 
-
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
         </div></div>
 
       }
