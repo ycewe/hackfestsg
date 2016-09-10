@@ -6,12 +6,13 @@ import HomePage from './components/homePage';
 import SearchPage from './components/SearchPage';
 import EntryPage from './components/entryPage';
 import UploadPage from './components/uploadPage';
+import SavedPage from './components/savedPage';
 
 ReactDOM.render(
   <Router>
     <Route path="/" component={App}>
       <IndexRoute component={HomePage} />
-      <Route path="saved" component={HomePage} />
+      <Route path="saved" component={SavedPage} />
       <Route path="upload" component={UploadPage} />
       <Route path="search" component={SearchPage} />
       <Route path="entry/:entryid" component={EntryPage} />

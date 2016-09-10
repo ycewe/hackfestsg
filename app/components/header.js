@@ -37,11 +37,17 @@ class Header extends React.Component {
       opacity: 0,
     }
 
+    const usernameStyle = {
+      position: 'absolute',
+      right: '70px',
+      fontSize: '15px',
+    }
+
     return(
       <div>
         <div className="app-header">
           <div></div>
-          <img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
+          <span style={usernameStyle}>{(photoUrl) ? this.state.user.displayName : ''}</span><img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
         </div>
       </div>
     );

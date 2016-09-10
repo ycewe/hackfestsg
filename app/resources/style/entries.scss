@@ -33,6 +33,15 @@
   display: block;
 }
 
+.entry-input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid skyblue;
+  margin-left: 10px;
+  width: 50%;
+}
+
 #recraft-toggle:checked ~ .recraft-content {
   display: block;
 }

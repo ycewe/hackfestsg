@@ -1,5 +1,6 @@
 import React from 'react';
 import firebaseModel from '../firebase-model';
+import Dropzone from 'react-dropzone';
 
 class UploadPage extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class UploadPage extends React.Component {
   }
 
   render() {
-    const imageStyle = {
+    const dropzoneContainerStyle = {
       background: '#419be0',
       top: '3.1rem',
       color: '#333',
@@ -27,7 +28,7 @@ class UploadPage extends React.Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      zIndex: '-1',
+      padding: '20px',
     }
 
     const style = {
@@ -36,17 +37,33 @@ class UploadPage extends React.Component {
       margin: '20px',
       padding: '20px',
       boxShadow: '3px 3px 5px #888888',
+      textAlign: 'center',
     }
 
     const starStyle = {
-      width: '20px',
-      height: '20px',
+      width: '40px',
+      height: '40px',
       margin: '0 5px',
     }
 
     const tagStyle = {
       backgroundColor: 'orange',
       borderRadius: '20px',
+    }
+
+    const dropzoneStyle = {
+      borderRadius: '200px',
+      border: '2px dotted white',
+      width: '250px',
+      height: '250px',
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
+    }
+
+    const activeDropzoneStyle = {
+      backgroundColor: 'aliceBlue',
     }
 
     let stars = [];
@@ -66,27 +83,27 @@ class UploadPage extends React.Component {
 
     return (
       <div id="entry-page">
-        <img style={imageStyle} src='./resources/images/app_homepage2.jpg' />
+        <div className="dropzone-container" style={dropzoneContainerStyle}>
+          <Dropzone style={dropzoneStyle} activeStyle={activeDropzoneStyle}>
+            <div><img src="/resources/images/Icons/camera.png" style={starStyle}/></div><div>Upload a display photo</div>
+          </Dropzone>
+        </div>
         <div className="entry-details" style={style}>
           <div>
-            <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{this.props.name}</span>
-            <span className="entry-rating">
-              {stars}
-            </span>
+            <span className="entry-name">Entry name:</span><input type="text" className="entry-input" />
           </div>
         <hr />
           <div>
-            <span className="entry-username">{ (this.state.user) ? this.state.user.displayName : '' }</span>
-            <span className="entry-tags">{tags}</span>
+            <button className="add-tag-button pure-button">+ Add Tags</button>
           </div>
         </div>
         <div className="entry-instructions" style={style}>
-          <span className="instruct-title">What do I need?</span>
+          <span className="instruct-title">What do you need?</span>
           <input type="checkbox" id="instruct-toggle" /><label htmlFor="instruct-toggle" id="instruct-toggle-label"></label>
           <div className="instruct-content"></div>
         </div>
         <div className="entry-recraft" style={style}>
-          <span className="recraft-title">How do I Re-Craft?</span>
+          <span className="recraft-title">How did you Re-Craft it?</span>
           <input type="checkbox" id="recraft-toggle" /><label htmlFor="recraft-toggle" id="recraft-toggle-label"></label>
           <div className="recraft-content"></div>
         </div>

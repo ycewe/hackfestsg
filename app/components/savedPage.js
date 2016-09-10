@@ -46,7 +46,6 @@ class SearchPage extends React.Component {
       <div id="search-page-content" style={style}>
         <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
         <Dropdown options={options} placeholder="Sort by" />
-        {JSON.stringify(this.state.test)}
       </div>
 
     );
