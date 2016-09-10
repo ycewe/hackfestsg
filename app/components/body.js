@@ -53,7 +53,7 @@ var PageBody = React.createClass( {
 
 				<p className = "content"> <a href="https://www.google.com.sg/">
 				<img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
-
+				
 
 			</div>
 
