@@ -40,6 +40,12 @@
   margin-bottom: 2rem;
 }
 
+.menu-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
 #drawer-toggle:checked ~ #drawer-toggle-label {
   @include transition(background 0.25s ease-in-out);
   height: 100%;
