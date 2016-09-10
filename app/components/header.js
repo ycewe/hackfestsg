@@ -29,8 +29,8 @@ class Header extends React.Component {
     const style = {
       position: 'absolute',
       right: '10px',
-      width: '50px',
-      height: '50px',
+      width: '40px',
+      height: '40px',
     }
 
     const inactiveStyle = {
