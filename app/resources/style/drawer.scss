@@ -32,6 +32,14 @@
   -webkit-overflow-scrolling: touch;
 }
 
+#drawer-menu {
+  list-style-type: none;
+}
+
+#drawer-menu li {
+  margin-bottom: 2rem;
+}
+
 #drawer-toggle:checked ~ #drawer-toggle-label {
   @include transition(background 0.25s ease-in-out);
   height: 100%;
@@ -44,21 +52,20 @@
   left: $zero;
 }
 
-@media all and (max-width:350px) { 
+@media all and (max-width:350px) {
 
-  #drawer-toggle:checked ~ #drawer-toggle-label { 
-    height: 100%; 
-    width: $mobile-hamburger-icon-width; 
-  } 
+  #drawer-toggle:checked ~ #drawer-toggle-label {
+    height: 100%;
+    width: $mobile-hamburger-icon-width;
+  }
 
-  #drawer-toggle:checked ~ #drawer-toggle-label, 
-  #drawer-toggle:checked ~ header { 
-    left: calc(100% - #{$mobile-hamburger-icon-width}); 
-  } 
+  #drawer-toggle:checked ~ #drawer-toggle-label,
+  #drawer-toggle:checked ~ header {
+    left: calc(100% - #{$mobile-hamburger-icon-width});
+  }
 
-  #drawer-toggle:checked ~ #drawer { 
-    width: calc(100% - #{$mobile-hamburger-icon-width}); 
-    padding: $drawer-padding; 
-  } 
+  #drawer-toggle:checked ~ #drawer {
+    width: calc(100% - #{$mobile-hamburger-icon-width});
+    padding: $drawer-padding;
+  }
 }
-
