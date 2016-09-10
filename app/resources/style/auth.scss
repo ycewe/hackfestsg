@@ -1,0 +1,38 @@
+@import 'constants';
+
+#google-auth {
+  height: 46px;
+  width: 191px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#google-signin {
+  @extend #google-auth;
+  border: none;
+  background: url(../images/google-btn.png) center center no-repeat;
+}
+
+#logout-container {
+  position: relative;
+  top: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#signin-container {
+  @extend #logout-container;
+}
+
+#signin-content {
+  padding: 30px;
+  margin-top: -20px;
+  box-shadow: 1px 2px 4px #bbbbbb;
+}
+
+#signin-text {
+  font-size: 30px;
+  margin: 5px;
+}

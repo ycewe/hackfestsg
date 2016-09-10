@@ -1,7 +1,24 @@
 import React from 'react';
+import Auth from '../auth';
+import firebaseModel from '../../firebase-model';
 import { Link } from 'react-router';
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { user: firebaseModel.getUser() };
+    this.processUser = this.processUser.bind(this);
+  }
+
+  componentWillMount() {
+    firebaseModel.onAuthStateChanged(this.processUser);
+    this.processUser(firebaseModel.getUser());
+  }
+
+  processUser(authed) {
+    this.setState({ user: authed });
+  }
+
   render() {
     return (
       <nav id="drawer">
@@ -18,6 +35,10 @@ class Menu extends React.Component {
             <Link to='upload' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
               <li><img src="./resources/images/Icons/upload.png" alt="home" className="menu-icon"/>Re-Designs</li>
             </Link>
+            {
+              (this.state.user)
+              ? <Auth type="logout" /> : <div />
+            }
           </ul>
       </nav>
     );
