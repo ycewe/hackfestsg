@@ -3,7 +3,7 @@
 var koa = require('koa');
 app = koa();
 var router = require('koa-router')();
-var entry = require()
+var entry = require('../model/entrySchema');
 
 /**
  * GET the whole database

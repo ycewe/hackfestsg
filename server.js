@@ -10,7 +10,7 @@ var url = connections.hostname + ':' + connections.port;
  * Connection to database
  */
 var mongoose = require('mongoose');
-var dbConnection = mongoose.connect('mongodb://localhost/myApp',
+var dbConnection = mongoose.connect('mongodb://localhost/hackFest',
     function (err) {
         if (err) {
             console.log('Connection Error,err');
