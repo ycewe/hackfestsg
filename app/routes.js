@@ -7,6 +7,10 @@ import EntryPage from './components/entryPage';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
+    <Route path="/home" component={HomePage} />
+    <Route path="/saved" component={HomePage} />
+    <Route path="/upload" component={HomePage} />
+    <Route path="/search" component={HomePage} />
     <Route path="entry/:entryid" component={EntryPage} />
   </Route>
 );
