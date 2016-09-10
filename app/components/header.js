@@ -27,8 +27,8 @@ class Header extends React.Component {
     }
 
     const style = {
-      position: 'relative',
-      left: '33rem',
+      position: 'absolute',
+      right: '10px',
       width: '50px',
       height: '50px',
     }
