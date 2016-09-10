@@ -11,12 +11,12 @@ import Search from './search.js';
 var PageBody = React.createClass( {
 	getInitialState() {
 		return {
-
+			//TODO
 		};
 	},
 
 	searchForItem(item) {
-
+		//TODO
 	},
 
 	render() {
