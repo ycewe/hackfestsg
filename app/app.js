@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import { Router, Route, Link, browserHistory } from 'react-router';
+import routes from './routes';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Router history={browserHistory} routes={routes}>
+  </Router>,
+  document.getElementById('root')
+);
 
 /**
  * Service worker registration
@@ -10,4 +15,3 @@ ReactDOM.render(<App />, document.getElementById('root'));
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
-
