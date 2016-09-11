@@ -5,7 +5,7 @@ $font-file: '../Fonts/OpenSans/OpenSans-Regular';
 @include font-face($font-family, $font-file, normal, normal);
 
 html {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 body {
