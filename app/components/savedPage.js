@@ -33,6 +33,7 @@ class SearchPage extends React.Component {
   handleClick(e) {
     for (let i=0; i < this.state.tabs; i++) {
       if(document.getElementById("close-tab").name === `${i}`) {
+        console.log(i);
         this.setState({
           tabs: this.state.tabs-1,
           tabContent: update(this.state.tabContent, {$splice: [[i, 1]]}),
