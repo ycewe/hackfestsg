@@ -12,7 +12,7 @@ var entrySchema = new mongoose.Schema({
     usersDownloaded: [String],
     materials: [String],
     steps: [{stepImage: String, stepText: String}],
-    hashTag: [String],
+    hashTag: String,
     trendingScore: Number
 
 });

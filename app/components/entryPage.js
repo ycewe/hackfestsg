@@ -52,32 +52,42 @@ class EntryPage extends React.Component {
     let stars = [];
     if (this.props.rating < 5) {
       for (let i=0; i < 5 - this.props.rating; i++) {
-          stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
+        stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
       }
     }
     for (let i=0; i < this.props.rating; i++) {
-        stars.push(<img src="./resources/images/Icons/star_filled.png" style={starStyle}/>);
+      stars.push(<img src="./resources/images/Icons/star_filled.png" style={starStyle}/>);
     }
 
     let tags = []
     for (let i=0; i < this.props.tags; i++) {
-        tags.push(<span className="tags">#stopthepretence</span>);
-    }
+      tags.push(<span className="tags">#stopthepretence</span>);
+    };
 
     let imgUrl = './resources/images/app_homepage2.jpg';
+    let steps = 'Do Step 1';
+    let materials = '';
     switch(this.props.location.pathname) {
         case '/entry/1':
           imgUrl = './resources/images/Entries/1.jpg';
+            materials = '1. Laundry Detergent Bottle';
+            steps = 'Step 1 : Cut \n Step 2 : Try';
           break;
         case '/entry/2':
           imgUrl = './resources/images/Entries/2.jpg';
-            break;
+            materials = '1. Laundry Detergent Bottle';
+          steps = 'Step 1 : Cut \n Step 2 : Make';
+          break;
         case '/entry/3':
           imgUrl = './resources/images/Entries/3.jpg';
-            break;
+            materials = '1. Spray Bottle';
+          steps = 'Step 1 : Cut \n Step 2 : Glue';
+          break;
         case '/entry/4':
           imgUrl = './resources/images/Entries/4.jpg';
-            break;
+            materials = '1. Laundry Detergent Bottle';
+          steps = 'Step 1 : Saw \n Step 2 : Try';
+          break;
         case '/entry/5':
           imgUrl = './resources/images/Entries/5.jpg';
             break;
@@ -91,6 +101,8 @@ class EntryPage extends React.Component {
           imgUrl = './resources/images/Entries/8.jpg';
             break;
     }
+
+
 
     return (
       <div id="entry-page">
@@ -111,12 +123,12 @@ class EntryPage extends React.Component {
         <div className="entry-instructions" style={style}>
           <span className="instruct-title">What do I need?</span>
           <input type="checkbox" id="instruct-toggle" /><label htmlFor="instruct-toggle" id="instruct-toggle-label"></label>
-          <div className="instruct-content"></div>
+          <div className="instruct-content">{materials}</div>
         </div>
         <div className="entry-recraft" style={style}>
           <span className="recraft-title">How do I Re-Craft?</span>
           <input type="checkbox" id="recraft-toggle" /><label htmlFor="recraft-toggle" id="recraft-toggle-label"></label>
-          <div className="recraft-content"></div>
+          <div className="recraft-content">{steps}</div>
         </div>
       </div>
     );
