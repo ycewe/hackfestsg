@@ -59,7 +59,7 @@ class SearchPage extends React.Component {
 
   handleKeyPress(e) {
     if(e.key === 'Enter')
-      if (document.getElementById('search-page-bar').value == 'detergent')
+      if (document.getElementById('search-page-bar').value.toLowerCase() == 'detergent')
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
