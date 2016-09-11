@@ -27,14 +27,24 @@
 .topImage
 {
 display: inline;
-
 padding: 0px;
+@include transition(transform 0.25s ease-in-out);
+}
+
+.topImage:hover {
+  transform: scale(0.95);
 }
 
 .botImage
 {
 display: inline;
 padding: 0px;
+@include transition(transform 0.25s ease-in-out);
+
+}
+
+.botImage:hover {
+  transform: scale(0.95);
 }
 
 .content

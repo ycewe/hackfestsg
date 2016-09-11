@@ -1,3 +1,5 @@
+@import 'constants';
+
 .Dropdown-control {
     position: relative;
     overflow: hidden;
@@ -53,6 +55,15 @@
 
 .Dropdown-root {
   border-radius: 0 0 20px 20px;
+}
+
+.Dropdown-option:hover {
+  color: blue;
+  @include transition(color 0.25s ease-in-out);
+}
+
+.Dropdown-option {
+  cursor: pointer;
 }
 
 #search-page-content input {

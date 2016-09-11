@@ -88,6 +88,12 @@
   padding: 5px 15px;
 }
 
+.tags:hover {
+  @include transition(all 0.25s ease-in-out);
+  background-color: maroon;
+  color: white;
+}
+
 .entry-details hr {
   margin: 15px 0;
 }
