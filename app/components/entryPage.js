@@ -6,10 +6,10 @@ class EntryPage extends React.Component {
 
   constructor(props) {
     super(props);
-    var image_url = './resources/images/Icons/saved.png';
-    this.state = { user: firebaseModel.getUser() };
+    this.state = { user: firebaseModel.getUser(),
+                    image: "./resources/images/Icons/saved.png" };
     this.processUser = this.processUser.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   componentWillMount() {
@@ -21,9 +21,10 @@ class EntryPage extends React.Component {
     this.setState({ user: authed });
   }
 
-  handleClick(e) {
-      image_url = './resources/images/Icons/savedRed.png';
+  onClick() {
+    this.setState({ image: "./resources/images/Icons/savedred.png"});
   }
+
 
   render() {
     const imageStyle = {
@@ -138,14 +139,12 @@ class EntryPage extends React.Component {
             break;
     }
 
-
-
     return (
       <div id="entry-page">
         <img style={imageStyle} src={imgUrl} />
         <div className="entry-details" style={style}>
           <div>
-            <img src=image_url style={starStyle} /><span className="entry-name">{entryName}</span>
+            <img src={this.state.image} onClick={this.onClick} style={starStyle} /><span className="entry-name">{entryName}</span>
             <span className="entry-rating">
               {stars}
             </span>
