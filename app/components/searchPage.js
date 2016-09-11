@@ -59,6 +59,7 @@ class SearchPage extends React.Component {
 
   handleKeyPress(e) {
     if(e.key === 'Enter')
+      if (document.getElementById('search-page-bar').value == 'detergent')
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
@@ -86,7 +87,12 @@ class SearchPage extends React.Component {
             <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
 
           </div>]
-      )
+      )});
+    else 
+      this.setState({
+        tabs: this.state.tabs+1,
+        tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
+        tabContent: this.state.tabContent.concat(['Not Matches Found!'])
     });
   }
 
