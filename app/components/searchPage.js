@@ -62,8 +62,32 @@ class SearchPage extends React.Component {
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
-        tabContent: this.state.tabContent.concat(['Not found']),
-      });
+        tabContent: this.state.tabContent.concat(
+        [<div id="images">
+            <p className = "content"> <Link to="/entry/2">
+            <img src="./resources/images/Entries/1.jpg" className = "topImage"/></Link> </p>
+
+
+            <p className = "content"> <Link to="/entry/3">
+            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link></p>
+
+
+            <p className = "content"> <Link to="/entry/4">
+            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></Link></p>
+
+
+            <p className = "content"> <Link to="/entry/5">
+            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></Link> </p>
+
+            <p className = "content"> <Link to="/entry/6">
+            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></Link> </p>
+
+            <p className = "content"> <Link to="/entry/7">
+            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
+
+          </div>]
+      )
+    });
   }
 
   componentDidMount(){
@@ -72,17 +96,6 @@ class SearchPage extends React.Component {
       this.setState( {test :response.data});
     });
   }
-
-  /*createItems(items) {
-    var output = [];
-
-    items.map(function(item){
-         output.push(<li>{item._id}</li>);
-
-    })
-    return output;
-
-  }*/
 
   render() {
     const style = {
