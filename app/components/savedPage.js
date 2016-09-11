@@ -6,6 +6,8 @@ import Connection from './connection';
 const API_URL = 'http://localhost:8000/api';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 var update = require('react-addons-update');
+import { Link } from 'react-router';
+
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -14,7 +16,8 @@ class SearchPage extends React.Component {
       test : [],
       tabs: 1,
       tabText: ['All'],
-      tabContent: ['Not found'],
+      tabContent: [<Link to="/entry/1">
+        <img src="./resources/images/Entries/1.jpg" className = "topImage"/></Link>],
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -26,7 +29,9 @@ class SearchPage extends React.Component {
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
-        tabContent: this.state.tabContent.concat(['Not found']),
+        tabContent: this.state.tabContent.concat(
+
+        ),
       });
   }
 

@@ -2,10 +2,14 @@ import React from 'react';
 import firebaseModel from '../firebase-model';
 
 class EntryPage extends React.Component {
+  
+
   constructor(props) {
     super(props);
-    this.state = { user: firebaseModel.getUser() };
+    this.state = { user: firebaseModel.getUser(),
+                    image: "./resources/images/Icons/saved.png" };
     this.processUser = this.processUser.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   componentWillMount() {
@@ -16,6 +20,11 @@ class EntryPage extends React.Component {
   processUser(authed) {
     this.setState({ user: authed });
   }
+
+  onClick() {
+    this.setState({ image: "./resources/images/Icons/savedred.png"});
+  }
+
 
   render() {
     const imageStyle = {
@@ -130,14 +139,12 @@ class EntryPage extends React.Component {
             break;
     }
 
-
-
     return (
       <div id="entry-page">
         <img style={imageStyle} src={imgUrl} />
         <div className="entry-details" style={style}>
           <div>
-            <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{entryName}</span>
+            <img src={this.state.image} onClick={this.onClick} style={starStyle} /><span className="entry-name">{entryName}</span>
             <span className="entry-rating">
               {stars}
             </span>
