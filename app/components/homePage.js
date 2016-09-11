@@ -2,12 +2,15 @@ import React from 'react';
 import Search from './search';
 import Auth from './auth';
 import firebaseModel from '../firebase-model';
+var Router = require('react-router');
+var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { user: firebaseModel.getUser() };
     this.processUser = this.processUser.bind(this);
+    this.searchForItem = this.searchForItem.bind(this);
   }
 
   componentWillMount() {
@@ -25,8 +28,9 @@ class HomePage extends React.Component {
     };
   }
 
-  searchForItem(item) {
-    //TODO
+  searchForItem(e) {
+    if(e.key === 'Enter')
+      window.location = '/#/search';
   }
 
   render() {
@@ -41,7 +45,7 @@ class HomePage extends React.Component {
           <div>
 
           <div id = "search">
-            <Search onSearch={this.searchForItem} />
+            <input onKeyPress={this.searchForItem} />
           </div>
 
           <div id = "home-images">
@@ -74,5 +78,9 @@ class HomePage extends React.Component {
     );
   }
 }
+
+HomePage.contextTypes = {
+  router: React.PropTypes.func,
+};
 
 export default HomePage;
