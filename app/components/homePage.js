@@ -5,6 +5,7 @@ import firebaseModel from '../firebase-model';
 var Router = require('react-router');
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,7 @@ class HomePage extends React.Component {
     };
   }
 
+
   searchForItem(e) {
     if(e.key === 'Enter')
       window.location = '/#/search';
@@ -49,28 +51,35 @@ class HomePage extends React.Component {
           </div>
 
           <div id = "home-images">
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></a></p>
+            <Link to= 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></p>
+            </Link>
 
+            <Link to= 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/> </p>
+            </Link>
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/></a> </p>
+            <Link to = 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></p>
+            </Link>
 
+            <Link to = 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></p>
+            </Link>
 
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></a></p>
+            <Link to = 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/> </p>
+            </Link>
 
-
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></a></p>
-
-
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/></a> </p>
-
-
-            <p className = "content"> <a href="https://www.google.com.sg/">
-            <img src="./resources/images/Categories/spray.png" className = "botImage"/></a></p>
+            <Link to = 'search'>
+            <p className = "content">
+            <img src="./resources/images/Categories/spray.png" className = "botImage"/></p>
+            </Link>
           </div></div> :
           <Auth type="signin" />
       }
