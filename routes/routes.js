@@ -40,6 +40,30 @@ router.get('/api/:id', function *(req, res, next){
 
 });
 
+
+/**
+ * Retrieves an array of entries by name.
+ */
+router.get('/api/name/:userName', bodyParser, function *(req, res, next){
+
+    res = yield entry.find({name: this.params.name}, function(err){
+       if (err) return next(err);
+   });
+    this.body = res;
+
+});
+
+/**
+ * Retrieves an array of entries by tag
+ */
+router.get('/api/tag/:tags', bodyParser, function *(req, res, next) {
+
+    res = yield entry.find({hashTag: this.params.tags}, function(err){
+        if (err) return next(err);
+    });
+    this.body = res;
+});
+
 // PUT. Update.
 router.put('/api/:id', bodyParser, function *(req, res, next) {
 
@@ -48,7 +72,7 @@ router.put('/api/:id', bodyParser, function *(req, res, next) {
 });
 
 // GET array of top 5 trending
-router.get('/trending', function *(req, res, next){
+router.get('/api/trending', function *(req, res, next){
    res = yield entry.find().sort({trendingScore: -1}).limit(5).exec();
     this.body = res;
 });

@@ -35,7 +35,7 @@ class SearchPage extends React.Component {
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
-    }
+    };
 
     const options = [
       'rating', 'views', 'most recent',
@@ -46,7 +46,6 @@ class SearchPage extends React.Component {
       <div id="search-page-content" style={style}>
         <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Search..." />
         <Dropdown options={options} placeholder="Sort by" />
-        {JSON.stringify(this.state.test)}
       </div>
 
     );
