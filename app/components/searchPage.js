@@ -20,7 +20,7 @@ class SearchPage extends React.Component {
             mainTab = 'Cosmetic';
             break;
           case '/search/3':
-            mainTab = 'Diswasher';
+            mainTab = 'Dishwasher';
             break;
           case '/search/4':
           mainTab = 'Laundry';
@@ -32,45 +32,48 @@ class SearchPage extends React.Component {
             mainTab = 'Spray';
               break;
     }
+    let content = [        <div id = "images">
+                <p className = "content">
+                <Link to="/entry/1">
+                <img src="./resources/images/Entries/1.jpg" className = "topImage"/>
+                </Link>
+                </p>
+
+                <p className = "content"> <Link to="/entry/2">
+                <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link> </p>
+
+
+                <p className = "content"> <Link to="/entry/3">
+                <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link></p>
+
+
+                <p className = "content"> <Link to="/entry/4">
+                <img src="./resources/images/Entries/4.jpg" className = "botImage"/></Link></p>
+
+
+                <p className = "content"> <Link to="/entry/5">
+                <img src="./resources/images/Entries/5.jpg" className = "botImage"/></Link> </p>
+
+                <p className = "content"> <Link to="/entry/6">
+                <img src="./resources/images/Entries/6.jpg" className = "botImage"/></Link> </p>
+
+                <p className = "content"> <Link to="/entry/7">
+                <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
+
+                <p className = "content"> <Link to="/entry/8">
+                <img src="./resources/images/Entries/8.jpg" className = "botImage"/></Link> </p>
+
+
+            </div>]
+            if(mainTab !== 'All' && mainTab !== 'Laundry') {
+              content = 'Not found';
+            }
     this.state = {
       test : [],
       tabs: 1,
       tabText: [mainTab],
       tabContent: [
-        <div id = "images">
-            <p className = "content">
-            <Link to="/entry/1">
-            <img src="./resources/images/Entries/1.jpg" className = "topImage"/>
-            </Link>
-            </p>
-
-
-            <p className = "content"> <Link to="/entry/2">
-            <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link> </p>
-
-
-            <p className = "content"> <Link to="/entry/3">
-            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link></p>
-
-
-            <p className = "content"> <Link to="/entry/4">
-            <img src="./resources/images/Entries/4.jpg" className = "botImage"/></Link></p>
-
-
-            <p className = "content"> <Link to="/entry/5">
-            <img src="./resources/images/Entries/5.jpg" className = "botImage"/></Link> </p>
-
-            <p className = "content"> <Link to="/entry/6">
-            <img src="./resources/images/Entries/6.jpg" className = "botImage"/></Link> </p>
-
-            <p className = "content"> <Link to="/entry/7">
-            <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
-
-            <p className = "content"> <Link to="/entry/8">
-            <img src="./resources/images/Entries/8.jpg" className = "botImage"/></Link> </p>
-
-
-        </div>
+        content
       ],
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
