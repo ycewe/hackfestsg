@@ -9,6 +9,7 @@
   position: absolute;
   right: 1rem;
   top: 1rems;
+  opacity: 0;
 }
 
 .instruct-content {
@@ -21,6 +22,31 @@
   position: absolute;
   right: 1rem;
   top: 1rems;
+  opacity: 0;
+}
+
+#recraft-toggle-label {
+  @include user-select(none);
+  -webkit-touch-callout: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.5rem;
+  background: url(../images/arrow-down.png) center center no-repeat;
+}
+
+#instruct-toggle-label {
+  @include user-select(none);
+  -webkit-touch-callout: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.5rem;
+  background: url(../images/arrow-down.png) center center no-repeat;
 }
 
 .recraft-content {

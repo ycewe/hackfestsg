@@ -19,7 +19,7 @@ class Header extends React.Component {
 
   render() {
     let photoUrl = './resources/images/Icons/user_default.png';
-
+    console.log(window.location.href);
     if(this.state.user) {
       photoUrl = (this.state.user.photoUrl) ? this.state.user.photoUrl : './resources/images/Icons/user_default.png';
     } else {
