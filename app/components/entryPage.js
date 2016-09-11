@@ -50,6 +50,7 @@ class EntryPage extends React.Component {
     }
 
     let stars = [];
+    /*
     if (this.props.rating < 5) {
       for (let i=0; i < 5 - this.props.rating; i++) {
         stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
@@ -58,35 +59,62 @@ class EntryPage extends React.Component {
     for (let i=0; i < this.props.rating; i++) {
       stars.push(<img src="./resources/images/Icons/star_filled.png" style={starStyle}/>);
     }
-
+*/
     let tags = []
-    for (let i=0; i < this.props.tags; i++) {
-      tags.push(<span className="tags">#stopthepretence</span>);
-    };
+    //for (let i=0; i < this.props.tags; i++) {
+    //  tags.push(<span className="tags">#stopthepretence</span>);
+    //};
 
     let imgUrl = './resources/images/app_homepage2.jpg';
     let steps = 'Do Step 1';
     let materials = '';
+    let entryName = '';
     switch(this.props.location.pathname) {
         case '/entry/1':
           imgUrl = './resources/images/Entries/1.jpg';
             materials = '1. Laundry Detergent Bottle';
             steps = 'Step 1 : Cut \n Step 2 : Try';
+            entryName = 'Tissue Box';
+            tags.push(<span className="tags">#detergent</span>);
+            tags.push(<span className="tags">#cool hack</span>);
+            tags.push(<span className="tags">#vase</span>);
+            for (let i = 0; i < 3; i++){
+              stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
+            }
           break;
         case '/entry/2':
           imgUrl = './resources/images/Entries/2.jpg';
             materials = '1. Laundry Detergent Bottle';
           steps = 'Step 1 : Cut \n Step 2 : Make';
+          entryName = 'Book Stand';
+          tags.push(<span className="tags">#detergent</span>);
+          tags.push(<span className="tags">#uber hack</span>);
+          tags.push(<span className="tags">#even better</span>);
+          for (let i = 0; i < 4; i++){
+            stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
+          }
           break;
         case '/entry/3':
           imgUrl = './resources/images/Entries/3.jpg';
             materials = '1. Spray Bottle';
           steps = 'Step 1 : Cut \n Step 2 : Glue';
+          entryName = 'Yarn Organiser';
+          tags.push(<span className="tags">#spray</span>);
+          tags.push(<span className="tags">#works well</span>);
+          tags.push(<span className="tags"></span>);
+          for (let i = 0; i < 4; i++){
+            stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
+          }
           break;
         case '/entry/4':
           imgUrl = './resources/images/Entries/4.jpg';
             materials = '1. Laundry Detergent Bottle';
           steps = 'Step 1 : Saw \n Step 2 : Try';
+          entryName = 'Water Dispenser';
+          tags.push(<span className="tags">#detergent</span>);
+          for (let i = 0; i < 2; i++){
+            stars.push(<img src="./resources/images/Icons/star_empty.png" style={starStyle}/>);
+          }
           break;
         case '/entry/5':
           imgUrl = './resources/images/Entries/5.jpg';
@@ -109,7 +137,7 @@ class EntryPage extends React.Component {
         <img style={imageStyle} src={imgUrl} />
         <div className="entry-details" style={style}>
           <div>
-            <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{this.props.name}</span>
+            <img src="./resources/images/Icons/saved.png" style={starStyle} /><span className="entry-name">{entryName}</span>
             <span className="entry-rating">
               {stars}
             </span>
