@@ -16,10 +16,12 @@
   "bugs": {
     "url": "https://github.com/ycewe/node-react-boilerplate/issues"
   },
+
   "dependencies": {
     "axios": "^0.14.0",
     "body-parser": "^1.15.2",
     "firebase": "^3.3.2",
+
     "flux": "^2.1.1",
     "koa": "^1.2.0",
     "koa-better-body": "^2.0.1",
@@ -35,8 +37,10 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-dropdown": "^1.1.0",
+    "react-dropzone": "^3.6.0",
     "react-router": "^2.8.0",
     "react-search": "^1.0.10",
+    "react-tabs": "^0.7.0",
     "redis": "^2.6.0-2",
     "sails-redis": "^0.10.7",
     "waterline": "^0.12.1"

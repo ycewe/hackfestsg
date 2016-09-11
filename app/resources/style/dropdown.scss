@@ -10,7 +10,8 @@
     outline: none;
     padding: 8px 52px 8px 10px;
     transition: all 200ms ease;
-    width: 150px;
+    width: 180px;
+    font-size: 16px;
 }
 
 .Dropdown-menu {
@@ -19,15 +20,16 @@
     border-radius: 10px;
     box-shadow: 0 1px 0 rgba(0,0,0,0.06);
     box-sizing: border-box;
-    margin-top: -20px;
+    margin-top: 0px;
     max-height: 200px;
     overflow-y: auto;
     position: absolute;
     top: 100%;
     padding: 10px;
-    width: 150px;
+    width: 180px;
     z-index: 1000;
     -webkit-overflow-scrolling: touch;
+    font-size: 16px;
 }
 
 .Dropdown-arrow {
@@ -40,7 +42,7 @@
     margin-top: -ceil(2.5);
     position: absolute;
     right: 10px;
-    top: 14px;
+    top: 16px;
     width: 0;
 }
 
@@ -50,14 +52,14 @@
 }
 
 .Dropdown-root {
-  width: 100px;
   border-radius: 0 0 20px 20px;
 }
 
 #search-page-content input {
-  height: 40px;
-  font-size: 18px;
-  width: 330px;
+  height: 36px;
+  font-size: 16px;
+  width: 50%;
   border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
   text-align: center;
 }

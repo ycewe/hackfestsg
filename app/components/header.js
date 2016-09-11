@@ -19,7 +19,7 @@ class Header extends React.Component {
 
   render() {
     let photoUrl = './resources/images/Icons/user_default.png';
-
+    console.log(window.location.href);
     if(this.state.user) {
       photoUrl = (this.state.user.photoUrl) ? this.state.user.photoUrl : './resources/images/Icons/user_default.png';
     } else {
@@ -29,23 +29,25 @@ class Header extends React.Component {
     const style = {
       position: 'absolute',
       right: '10px',
-      width: '50px',
-      height: '50px',
+      width: '40px',
+      height: '40px',
     }
 
     const inactiveStyle = {
       opacity: 0,
     }
 
+    const usernameStyle = {
+      position: 'absolute',
+      right: '70px',
+      fontSize: '15px',
+    }
+
     return(
       <div>
         <div className="app-header">
           <div></div>
-          <img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
-        </div>
-        <div id="jumbotron">
-            <img src="./resources/images/app_logo_homepage.png" id="header-title"/>
-            <img src="./resources/images/app_homepage1.jpg" id="header-background"/>
+          <span style={usernameStyle}>{(photoUrl) ? this.state.user.displayName : ''}</span><img src={photoUrl} style={(photoUrl) ? style : inactiveStyle}/>
         </div>
       </div>
     );

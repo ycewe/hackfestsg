@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import App from './components/app';
 import HomePage from './components/homePage';
 import SearchPage from './components/SearchPage';
 import EntryPage from './components/entryPage';
+import UploadPage from './components/uploadPage';
+import SavedPage from './components/savedPage';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router>
     <Route path="/" component={App}>
       <IndexRoute component={HomePage} />
-      <Route path="saved" component={HomePage} />
-      <Route path="upload" component={HomePage} />
+      <Route path="saved" component={SavedPage} />
+      <Route path="upload" component={UploadPage} />
       <Route path="search" component={SearchPage} />
-      <Route path="entry/:entryid" component={EntryPage} />
+      <Route path="entry(/:entryId)" component={EntryPage} />
     </Route>
   </Router>,
   document.getElementById('root')

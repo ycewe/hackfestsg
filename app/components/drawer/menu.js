@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../auth';
 import firebaseModel from '../../firebase-model';
-import { Link } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -23,9 +23,9 @@ class Menu extends React.Component {
     return (
       <nav id="drawer">
           <ul id="drawer-menu">
-            <Link to='/' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
+            <IndexLink to='/' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
               <li><img src="./resources/images/Icons/home.png" alt="home" className="menu-icon"/>Home</li>
-            </Link>
+            </IndexLink>
             <Link to='search' style={style} activeStyle={activeStyle} activeClassName='activeLink'>
               <li><img src="./resources/images/Icons/search.png" alt="home" className="menu-icon"/>Re-Search</li>
             </Link>
