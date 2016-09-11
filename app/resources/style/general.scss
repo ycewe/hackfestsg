@@ -5,12 +5,13 @@ $font-file: '../Fonts/OpenSans/OpenSans-Regular';
 @include font-face($font-family, $font-file, normal, normal);
 
 html {
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   font-family: $font-family;
+  overflow-x: hidden;
 }
 
 #close-tab {

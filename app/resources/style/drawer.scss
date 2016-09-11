@@ -38,6 +38,11 @@
 
 #drawer-menu li {
   margin-bottom: 2rem;
+  @include transition(opacity 0.25s ease-in-out);
+}
+
+#drawer-menu li:hover {
+  opacity: 0.5;
 }
 
 .menu-icon {
