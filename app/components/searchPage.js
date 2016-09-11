@@ -89,11 +89,11 @@ class SearchPage extends React.Component {
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
         tabContent: this.state.tabContent.concat(
         [<div id="images">
-            <p className = "content"> <Link to="/entry/2">
+            <p className = "content"> <Link to="/entry/1">
             <img src="./resources/images/Entries/1.jpg" className = "topImage"/></Link> </p>
 
 
-            <p className = "content"> <Link to="/entry/3">
+            <p className = "content"> <Link to="/entry/2">
             <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link></p>
 
 
@@ -112,6 +112,22 @@ class SearchPage extends React.Component {
 
           </div>]
       )});
+
+    else if (document.getElementById('search-page-bar').value.toLowerCase() == 'spray')
+      this.setState({
+        tabs: this.state.tabs+1,
+        tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
+        tabContent: this.state.tabContent.concat(
+        [<div id="images">
+            <p className = "content"> <Link to="/entry/3">
+            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link> </p>
+
+
+            <p className = "content"> <Link to="/entry/8">
+            <img src="./resources/images/Entries/8.jpg" className = "topImage"/></Link></p>
+          </div>]
+      )});
+
     else
       this.setState({
         tabs: this.state.tabs+1,
