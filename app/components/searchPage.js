@@ -106,7 +106,7 @@ class SearchPage extends React.Component {
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
-        tabContent: this.state.tabContent.concat(['Not Matches Found!'])
+        tabContent: this.state.tabContent.concat(['No Matches Found!'])
     });
   }
 
@@ -126,6 +126,7 @@ class SearchPage extends React.Component {
           tabText: update(this.state.tabText, {$splice: [[i, 1]]}),
         })
       }
+      
     }
   }
 
@@ -168,7 +169,6 @@ class SearchPage extends React.Component {
         <input id="search-page-bar" onKeyPress={this.handleKeyPress} placeholder="Additional filters..." />
 
         <Dropdown options={options} placeholder="Sort by" />
-]
         </div>
         <div style={tabStyle}>
         <Tabs
