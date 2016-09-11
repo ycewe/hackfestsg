@@ -5,19 +5,21 @@ $font-file: '../Fonts/OpenSans/OpenSans-Regular';
 @include font-face($font-family, $font-file, normal, normal);
 
 html {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 body {
+  margin: 0;
   font-family: $font-family;
-  -webkit-text-size-adjust: none;
-  left: $zero;
-  padding: $zero;
-  margin: $zero;
-  -webkit-font-smoothing: antialiased;
-  background: #fff;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+}
+
+#close-tab {
+  @include user-select(none);
+  -webkit-touch-callout: none;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+  color: grey;
+  font-size: 15px;
+  background: none;
+  border: none;
 }

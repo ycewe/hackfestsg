@@ -6,8 +6,7 @@ import axios from 'axios';
 import Connection from './connection';
 const API_URL = 'http://localhost:8000/api';
 import { Link } from 'react-router';
-
-
+var update = require('react-addons-update');
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -54,21 +53,23 @@ class SearchPage extends React.Component {
       ],
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
   handleKeyPress(e) {
     if(e.key === 'Enter')
+      if (document.getElementById('search-page-bar').value.toLowerCase() == 'detergent')
       this.setState({
         tabs: this.state.tabs+1,
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
         tabContent: this.state.tabContent.concat(
         [<div id="images">
-            <p className = "content"> <Link to="/entry/2">
+            <p className = "content"> <Link to="/entry/1">
             <img src="./resources/images/Entries/1.jpg" className = "topImage"/></Link> </p>
 
 
-            <p className = "content"> <Link to="/entry/3">
+            <p className = "content"> <Link to="/entry/2">
             <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link></p>
 
 
@@ -86,7 +87,26 @@ class SearchPage extends React.Component {
             <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
 
           </div>]
-      )
+      )});
+    else if (document.getElementById('search-page-bar').value.toLowerCase() == 'spray')
+      this.setState({
+        tabs: this.state.tabs+1,
+        tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
+        tabContent: this.state.tabContent.concat(
+        [<div id="images">
+            <p className = "content"> <Link to="/entry/3">
+            <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link> </p>
+
+
+            <p className = "content"> <Link to="/entry/8">
+            <img src="./resources/images/Entries/8.jpg" className = "topImage"/></Link></p>
+          </div>]
+      )});
+    else 
+      this.setState({
+        tabs: this.state.tabs+1,
+        tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
+        tabContent: this.state.tabContent.concat(['Not Matches Found!'])
     });
   }
 
@@ -95,6 +115,18 @@ class SearchPage extends React.Component {
       console.log(response.data);
       this.setState( {test :response.data});
     });
+  }
+
+  handleClick(e) {
+    for (let i=0; i < this.state.tabs; i++) {
+      if(document.getElementById("close-tab").name === `${i}`) {
+        this.setState({
+          tabs: this.state.tabs-1,
+          tabContent: update(this.state.tabContent, {$splice: [[i, 1]]}),
+          tabText: update(this.state.tabText, {$splice: [[i, 1]]}),
+        })
+      }
+    }
   }
 
   render() {
@@ -117,7 +149,9 @@ class SearchPage extends React.Component {
 
     let tabs = []
     for (let i=0; i < this.state.tabs; i++) {
-        tabs.push(<Tab>{this.state.tabText[i]}</Tab>);
+        tabs.push(<Tab>{this.state.tabText[i]}
+          <button id="close-tab" name={i} onClick={this.handleClick}>&#10060;</button>
+          </Tab>);
     }
 
     let tabContent = []
