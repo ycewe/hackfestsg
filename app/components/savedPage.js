@@ -5,6 +5,7 @@ import axios from 'axios';
 import Connection from './connection';
 const API_URL = 'http://localhost:8000/api';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+var update = require('react-addons-update');
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class SearchPage extends React.Component {
       tabContent: ['Not found'],
     };
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -26,6 +28,18 @@ class SearchPage extends React.Component {
         tabText: this.state.tabText.concat([document.getElementById('search-page-bar').value]),
         tabContent: this.state.tabContent.concat(['Not found']),
       });
+  }
+
+  handleClick(e) {
+    for (let i=0; i < this.state.tabs; i++) {
+      if(document.getElementById("close-tab").name === `${i}`) {
+        this.setState({
+          tabs: this.state.tabs-1,
+          tabContent: update(this.state.tabContent, {$splice: [[i, 1]]}),
+          tabText: update(this.state.tabText, {$splice: [[i, 1]]}),
+        })
+      }
+    }
   }
 
   componentDidMount(){
@@ -61,7 +75,9 @@ class SearchPage extends React.Component {
 
     let tabs = []
     for (let i=0; i < this.state.tabs; i++) {
-        tabs.push(<Tab>{this.state.tabText[i]}</Tab>);
+        tabs.push(<Tab>{this.state.tabText[i]}
+          <button id="close-tab" name={i} onClick={this.handleClick}>&#10060;</button>
+          </Tab>);
     }
 
     let tabContent = []
