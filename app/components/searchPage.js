@@ -23,7 +23,7 @@ class SearchPage extends React.Component {
             mainTab = 'Dishwasher';
             break;
           case '/search/4':
-          mainTab = 'Laundry';
+          mainTab = 'Detergent';
             break;
           case '/search/5':
             mainTab = 'Shampoo';
@@ -41,7 +41,6 @@ class SearchPage extends React.Component {
 
                 <p className = "content"> <Link to="/entry/2">
                 <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link> </p>
-
 
                 <p className = "content"> <Link to="/entry/3">
                 <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link></p>
@@ -63,11 +62,52 @@ class SearchPage extends React.Component {
                 <p className = "content"> <Link to="/entry/8">
                 <img src="./resources/images/Entries/8.jpg" className = "botImage"/></Link> </p>
 
-
             </div>]
-            if(mainTab !== 'All' && mainTab !== 'Laundry') {
-              content = 'Not found';
+            switch(mainTab) {
+              case 'Spray':
+                content = [<div id="images">
+                  <p className = "content"> <Link to="/entry/3">
+                  <img src="./resources/images/Entries/3.jpg" className = "topImage"/></Link></p>
+
+                  <p className = "content"> <Link to="/entry/8">
+                  <img src="./resources/images/Entries/8.jpg" className = "botImage"/></Link> </p></div>
+                ];
+                break;
+              case 'All':
+                break;
+              case 'Detergent':
+                content = [
+                  <div id = "images">
+                              <p className = "content">
+                              <Link to="/entry/1">
+                              <img src="./resources/images/Entries/1.jpg" className = "topImage"/>
+                              </Link>
+                              </p>
+
+                              <p className = "content"> <Link to="/entry/2">
+                              <img src="./resources/images/Entries/2.jpg" className = "topImage"/></Link> </p>
+
+
+                              <p className = "content"> <Link to="/entry/4">
+                              <img src="./resources/images/Entries/4.jpg" className = "botImage"/></Link></p>
+
+
+                              <p className = "content"> <Link to="/entry/5">
+                              <img src="./resources/images/Entries/5.jpg" className = "botImage"/></Link> </p>
+
+                              <p className = "content"> <Link to="/entry/6">
+                              <img src="./resources/images/Entries/6.jpg" className = "botImage"/></Link> </p>
+
+                              <p className = "content"> <Link to="/entry/7">
+                              <img src="./resources/images/Entries/7.jpg" className = "botImage"/></Link> </p>
+
+                          </div>
+                ]
+                break;
+              default:
+                content = 'Not Found';
             }
+
     this.state = {
       test : [],
       tabs: 1,
