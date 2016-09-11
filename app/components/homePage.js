@@ -47,39 +47,34 @@ class HomePage extends React.Component {
           <div>
 
           <div id = "search">
-            <input onKeyPress={this.searchForItem} />
+            <input onKeyPress={this.searchForItem} placeholder="What are you looking for?" />
           </div>
 
           <div id = "home-images">
-            <Link to= 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></p>
-            </Link>
 
-            <Link to= 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/> </p>
-            </Link>
+            <p className = "content"> <Link to="/search/1">
+            <img src="./resources/images/Categories/cardboard.png" className = "topImage"/></Link></p>
 
-            <Link to = 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></p>
-            </Link>
 
-            <Link to = 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></p>
-            </Link>
+            <p className = "content"> <Link to="/search/2">
+            <img src="./resources/images/Categories/cosmetic.png" className = "topImage"/></Link> </p>
 
-            <Link to = 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/> </p>
-            </Link>
 
-            <Link to = 'search'>
-            <p className = "content">
-            <img src="./resources/images/Categories/spray.png" className = "botImage"/></p>
-            </Link>
+            <p className = "content"> <Link to="/search/3">
+            <img src="./resources/images/Categories/dishwasher.png" className = "topImage"/></Link></p>
+
+
+            <p className = "content"> <Link to="/search/4">
+            <img src="./resources/images/Categories/laundry.png" className = "botImage"/></Link></p>
+
+
+            <p className = "content"> <Link to="/search/5">
+            <img src="./resources/images/Categories/shampoo.png" className = "botImage"/></Link> </p>
+
+
+            <p className = "content"> <Link to="/search/6">
+            <img src="./resources/images/Categories/spray.png" className = "botImage"/></Link></p>
+
           </div></div> :
           <Auth type="signin" />
       }

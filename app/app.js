@@ -14,7 +14,7 @@ ReactDOM.render(
       <IndexRoute component={HomePage} />
       <Route path="saved" component={SavedPage} />
       <Route path="upload" component={UploadPage} />
-      <Route path="search" component={SearchPage} />
+      <Route path="search(/:searchId)" component={SearchPage} />
       <Route path="entry(/:entryId)" component={EntryPage} />
     </Route>
   </Router>,
