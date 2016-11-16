@@ -1,4 +1,4 @@
-# Node-React-Boilerplate
+# Hackfest: ReCraft
 
 ## Setup
 1. Clone the repository
