@@ -24,7 +24,7 @@ require('babel-polyfill');
 function writeServiceWorker(dir, handleFetch, cb) {
   const config = {
     cacheId: packageJson.name,
-    handleFetch,
+    handleFetch: true,
     staticFileGlobs: [
       `${dir}/index.html`,
       `${dir}/app.js`,
